@@ -11,7 +11,7 @@
   Version: 0.1
   .NOTES
   Author: Andrés Gorzelany https://github.com/get-itips
-
+  Contains some portions from the great Robert Dyjas https://github.com/robdy
   It takes a .csv file as input, this file can be customized to fit your environment.
   .EXAMPLE
   Customize-M365EnterpriseDemo.ps1
