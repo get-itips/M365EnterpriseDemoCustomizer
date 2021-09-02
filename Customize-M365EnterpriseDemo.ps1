@@ -51,7 +51,7 @@ function Show-Menu {
         $usersAndRolesCSV="userAndRoles_BusinessVoice.csv"
     }
     }
-    pause
+    
 
 # ================
 #region Processing
