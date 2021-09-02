@@ -8,7 +8,7 @@
   This is useful to test different scenarios where it would be better not to use a can-do-all user like Global Administrator
   Some users have more than one role as I would like all Administrative users to also have the licenses provided by the Demo tenant.
   Contributions are very well welcomed!
-  Version: 0.1
+  Version: 0.2
   .NOTES
   Author: Andrés Gorzelany https://github.com/get-itips
   Contains some portions from the great Robert Dyjas https://github.com/robdy
@@ -20,7 +20,7 @@
 # ================
 #region Variables
 # ================
-$usersAndRolesCSV="userAndRoles.csv"
+
 $usersToDemote = @('Allan Deyoung','Isaiah Langer','Lidia Holloway','Nestor Wilke')
 $unassignedLicenseUser="BiancaP"
 $planName="ENTERPRISEPACK"
@@ -28,6 +28,30 @@ $azADModuleName="AzureADPreview"
 # ================
 #endregion Variables
 # ================
+
+function Show-Menu {
+    param (
+        [string]$Title = 'Microsoft 365 Demo Customizer'
+    )
+    Clear-Host
+    Write-Host "================ $Title ================"
+    
+    Write-Host "1: Press '1' for Enterprise Demo Tenant."
+    Write-Host "2: Press '2' for Business Voice Demo Tenant"
+}
+  Show-Menu
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+    '1' {
+    'Running for Enterprise Demo Tenant'
+        $usersAndRolesCSV="userAndRoles.csv"
+    } '2' {
+    'Running for Business Voice Demo Tenant'
+        $usersAndRolesCSV="userAndRoles_BusinessVoice.csv"
+    }
+    }
+    pause
 
 # ================
 #region Processing
