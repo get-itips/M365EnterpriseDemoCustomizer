@@ -56,10 +56,11 @@ function Show-Menu {
 # ================
 #region Processing
 # ================
-
+	$ErrorActionPreference = "Stop" 
 	$startTime = Get-Date
 	Write-Host "Starting script at $startTime"
 	Import-Module -Name $azADModuleName
+	$ErrorActionPreference = "Continue"
 	Connect-AzureAD
 
 	# Remove GA from some users, we already have MOD and Megan with that Role
@@ -79,7 +80,7 @@ function Show-Menu {
 		$user=$entry.username
 		Write-Host "Making $user a $role"
 		$roleDefinition = Get-AzureADMSRoleDefinition -Filter "displayName eq '$role'"
-		New-AzureADMSRoleAssignment -DirectoryScopeId '/' -RoleDefinitionId $roleDefinition.Id -PrincipalId (Get-AzureADUser -Filter "MailNickName eq '$user'").objectId -ResourceScope '/'
+		New-AzureADMSRoleAssignment -DirectoryScopeId '/' -RoleDefinitionId $roleDefinition.Id -PrincipalId (Get-AzureADUser -Filter "MailNickName eq '$user'").objectId
 	}
 
 	#There is an unassigned E3 license, let's assign it to one of our administrators
