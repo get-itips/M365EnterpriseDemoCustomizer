@@ -8,9 +8,9 @@
 
  On the provided .CSV file (can be customized), some users have more than one role as I would like all Administrative users to also have the licenses provided by the Demo tenant.
 
- ![Enterprise Demo Tenant Roles image 1](/images/EntDemo_Slide1.png "Enterprise Demo Tenant Roles image 1")
+ ![Enterprise Demo Tenant Roles image 1](/images/EntDemo_Slide1.PNG "Enterprise Demo Tenant Roles image 1")
 
- ![Enterprise Demo Tenant Roles image 2](/images/EntDemo_Slide2.png "Enterprise Demo Tenant Roles image 2")
+ ![Enterprise Demo Tenant Roles image 2](/images/EntDemo_Slide2.PNG "Enterprise Demo Tenant Roles image 2")
 
  Contributions are very well welcomed and I need feedback!
 
